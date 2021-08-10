@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Reservations from "./pages/Reservations"
 import Menu from "./pages/Menu";
 import SeatingPlan from "./pages/SeatingPlan"
-import Navbar from './components/Navbar';
 import { AdminLogin } from "./pages/AdminLogin";
 
 

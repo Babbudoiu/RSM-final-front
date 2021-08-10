@@ -1,11 +1,10 @@
 export const fetchAdmin = async (e,  username, pass, setAdmin) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_NAME}users`, {
+      const response = await fetch(`${process.env.REACT_APP_API_NAME}admin/${username}`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({          
-            username: username,
             password: pass,
           }),
         });   
