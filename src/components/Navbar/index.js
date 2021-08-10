@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, NavLogo, NavbarContainer, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
+import { Nav, NavLogo, NavbarContainer, NavMenu, NavItem, NavLinks} from './NavbarElements';
 
 export const Navbar = ({setUser}) => {
     const logoutHandler = (e) => {
