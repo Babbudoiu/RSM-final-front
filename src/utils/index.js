@@ -5,7 +5,6 @@ export const fetchAdmin = async (e,  username, password, setAdmin) => {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({    
-                  
             password: password,
           }),
         });   
@@ -23,7 +22,8 @@ export const fetchUsers = async (e,  username, pass, setUser) => {
     const response = await fetch(`${process.env.REACT_APP_BACK_END}users/${username}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({          
+        body: JSON.stringify({ 
+          username: username,         
           password: pass,
         }),
       });   
