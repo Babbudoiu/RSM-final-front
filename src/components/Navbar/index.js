@@ -1,7 +1,12 @@
 import React from 'react'
 import { Nav, NavLogo, NavbarContainer, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
 
-export const Navbar = () => {
+export const Navbar = ({setUser}) => {
+    const logoutHandler = (e) => {
+        e.preventDefault();
+        localStorage.removeItem("MyToken");
+        setUser();
+    }
     return (
         <>
          <Nav>
@@ -18,9 +23,7 @@ export const Navbar = () => {
                         <NavLinks to="menu">Menu</NavLinks>
                     </NavItem>
                  </NavMenu>
-                 <NavBtn>
-                    <NavBtnLink to="/signout">Sign Out</NavBtnLink>
-                 </NavBtn>
+                 <button onClick = { logoutHandler } >Log Out</button>
              </NavbarContainer>
          </Nav>
         </>
