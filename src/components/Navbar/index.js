@@ -9,13 +9,13 @@ export const Navbar = () => {
                  <NavLogo to= '/'>Walrus</NavLogo>
                  <NavMenu>
                     <NavItem>
-                        <NavLinks to="about">Reservations</NavLinks>
+                        <NavLinks to="reservations">Reservations</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to="discover">Seating Plan</NavLinks>
+                        <NavLinks to="seating-Plan">Seating Plan</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to="services">Menu</NavLinks>
+                        <NavLinks to="menu">Menu</NavLinks>
                     </NavItem>
                  </NavMenu>
                  <NavBtn>
