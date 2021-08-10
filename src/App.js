@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Reservations from "./pages/Reservations"
 import Menu from "./pages/Menu";
 import SeatingPlan from "./pages/SeatingPlan"
-import Navbar from './components/Navbar';
+
 import { AdminLogin } from "./pages/AdminLogin";
+import { UserLogin } from "./pages/userLogin";
 
 
 const App  = () => {
+  console.log(process.env.REACT_APP_BACK_END)
   const [admin, setAdmin] = useState();
   const[user, setUser]=  useState();
   return(
@@ -32,7 +34,7 @@ const App  = () => {
       </Route>
 
       <Route exact path="/userLogin">
-        <userLogin setuser={setUser} />
+        <UserLogin setuser={setUser} />
       </Route>
 
     </Router>

@@ -5,7 +5,7 @@ import { fetchAdmin } from "../../utils";
 
 
 
-export const AdminLogin = ({setAdmin  }) => {
+export const AdminLogin = ({setAdmin}) => {
     const [adminUsername, setAdminUsername] = useState();
     const [adminPassword, setAdminPassword] = useState();
   return (

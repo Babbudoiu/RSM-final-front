@@ -12,7 +12,7 @@ color: var(--primary);
 border: none;
 border-radius: 5px;
 
-&:hover { background-color: var(black); color: var(white) }
+
 `;
 
 export const LogForm = styled.form`
