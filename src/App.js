@@ -42,7 +42,7 @@ const App  = () => {
       </Route>
 
       <Route exact path="/home">
-        <Home/>
+        <Home setUser={setUser}/>
       </Route>
 
     </Router>
