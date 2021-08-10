@@ -4,6 +4,8 @@ import Reservations from "./pages/Reservations"
 import Menu from "./pages/Menu";
 import SeatingPlan from "./pages/SeatingPlan"
 const App  = () => {
+  const [admin, setAdmin] = useState();
+  const[user,setUser]=  useState(initialState)
   return(
     <Router>
        <Route path='/reservations'>
