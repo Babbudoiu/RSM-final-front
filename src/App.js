@@ -1,11 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import Navbar from './components/Navbar';
-
+import Reservations from "./pages/Reservations"
+import Menu from "./pages/Menu";
+import SeatingPlan from "./pages/SeatingPlan"
 const App  = () => {
   return(
     <Router>
-      <Navbar /> 
+       <Route path='/reservations'>
+      <Reservations/>
+       </Route>
+       <Route path="/menu">
+         <Menu />
+       </Route>
+       <Route path ="/seating-plan">
+         <SeatingPlan />
+       </Route>
     </Router>
   )
 };
