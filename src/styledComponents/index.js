@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import "../App.css";
 
 export const LogButton = styled.button`
 width: 300px;
@@ -11,7 +12,7 @@ color: var(--primary);
 border: none;
 border-radius: 5px;
 
-&:hover { background-color: var(--tertiary); color: var(--white) }
+&:hover { background-color: var(black); color: var(white) }
 `;
 
 export const LogForm = styled.form`
@@ -32,4 +33,26 @@ export const LogInput = styled.input`
 export const PageContainer = styled.div`
   width: 100vw;
   height: 85vh;
+`;
+
+export const FormContainer = styled.div`
+  width: 350px;
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+`;
+
+export const LandingContainer = styled.div`
+  font-family: sans-serif;
+  background-color: var(--primary);
+  color: var(--white);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
