@@ -23,7 +23,9 @@ export const Navbar = ({setUser}) => {
                         <NavLinks to="menu">Menu</NavLinks>
                     </NavItem>
                  </NavMenu>
-                 <button onClick = { logoutHandler } >Log Out</button>
+                 <button 
+                 className = "logOutBtn"
+                 onClick = { logoutHandler } >Log Out</button>
              </NavbarContainer>
          </Nav>
         </>

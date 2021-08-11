@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FormContainer, LandingContainer, LogButton, LogForm, LogInput } from "../../styledComponents";
-
+import Footer from "../../components/Footer";
 import { fetchUsers } from "../../utils";
 import { createUsers } from "../../utils";
 
@@ -33,12 +33,8 @@ export const UserLogin = ({setUser}) => {
             onChange={(e) => setUserPassword(e.target.value)}
             placeholder="Password"></LogInput>
           <LogButton type="submit">User Login</LogButton>
-          
-          
-        
-        </LogForm>
-
-      </FormContainer>
+          </LogForm>
+          </FormContainer>
       : <FormContainer>
       <LogForm
         onSubmit={(e) => createUsers(e, userUsername, userPassword,role, setUser)}
@@ -56,11 +52,9 @@ export const UserLogin = ({setUser}) => {
           placeholder="User Password"></LogInput>
         <LogButton type="submit">User Login</LogButton>
         
-        
-      
-      </LogForm>
-
+    </LogForm>
     </FormContainer>}
+    <Footer />
     </LandingContainer>
   );
 };
