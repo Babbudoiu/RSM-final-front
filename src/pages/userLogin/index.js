@@ -5,21 +5,40 @@ import { fetchUsers } from "../../utils";
 import { createUsers } from "../../utils";
 
 
-export const UserLogin = ({setUser}) => {
+export const UserLogin = ({setUser, setAdmin}) => {
     const [userUsername, setUserUsername] = useState();
     const [userPassword, setUserPassword] = useState();
     const [role, setRole] = useState()
-    const [newUser, setNewUser] = useState(false);
+    const [setting, setSetting] = useState(1);
   return (
      
     <LandingContainer>
         <LogButton
           type="button"
-          onClick={() => setNewUser(!newUser)}
+          onClick={() => setSetting(1)}
         >
-          {newUser ? "Switch To Create" : "Switch To Log In"}
+          Log in
         </LogButton>
-      {newUser?
+        
+        <LogButton
+          type="button"
+          onClick={() => setSetting(2)}
+        >
+          Create User
+        </LogButton>
+        <LogButton
+          type="button"
+          onClick={() => setAdmin()}
+        >
+          Admin Log Out
+        </LogButton>
+        
+{setting ===1?
+
+
+
+
+      
       <FormContainer>
         <LogForm
           onSubmit={(e) => fetchUsers(e, userUsername, userPassword,  setUser)}
@@ -34,8 +53,9 @@ export const UserLogin = ({setUser}) => {
             placeholder="Password"></LogInput>
           <LogButton type="submit">User Login</LogButton>
           </LogForm>
-          </FormContainer>
-      : <FormContainer>
+          </FormContainer>: <></>}
+          {setting ===2?
+      <FormContainer>
       <LogForm
         onSubmit={(e) => createUsers(e, userUsername, userPassword,role, setUser)}
       >                     
@@ -53,7 +73,7 @@ export const UserLogin = ({setUser}) => {
         <LogButton type="submit">User Login</LogButton>
         
     </LogForm>
-    </FormContainer>}
+    </FormContainer> : <></>}
     <Footer />
     </LandingContainer>
   );
