@@ -1,9 +1,10 @@
 import React from 'react';
-import LunchBookings from '../Bookings';
-import DinnerBookings from '../BookingsDinner';
+import DinnerBookings from '../Bookings/DinnerBookings';
+import LunchBookings from '../Bookings/LunchBooking';
 
 
-export const MealTimes = ({showMeals, lunch, setLunch, dinner, setDinner}) => {
+
+export const MealTimes = ({showMeals, lunch, setLunch, dinner, setDinner, date}) => {
 
 const lunchHandler = () => {
     if (lunch === true) {
@@ -31,8 +32,8 @@ const dinnerHandler = () => {
            onClick={dinnerHandler}>Dinner</button>
            </div>
       
-        {lunch? <LunchBookings /> : <> </>}
-        {dinner? <DinnerBookings /> : <> </>}
+        {lunch? <LunchBookings date={date} /> : <> </>}
+        {dinner? <DinnerBookings date={date} /> : <> </>}
     
       </div> 
     )

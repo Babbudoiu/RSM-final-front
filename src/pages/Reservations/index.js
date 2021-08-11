@@ -22,11 +22,12 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
         lunch={lunch}
         setLunch={setLunch}
         dinner={dinner}
-        setDinner={setDinner}/>
+        setDinner={setDinner}
+        date={date}/>
         <Calendar 
         onChange={onChange} 
         value={date} 
-        onClickDay={() => 
+        onClickDay={(e) => 
         {setShowMeals(true)}}/>
         
         <Footer />

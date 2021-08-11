@@ -9,7 +9,6 @@ export const fetchAdmin = async (e,  username, password, setAdmin) => {
           }),
         });   
       const data = await response.json();
-      console.log(data)
       setAdmin(data.user.username);
     } catch (error) {
       console.log(error);
@@ -72,4 +71,29 @@ export const authUser = async (setUser)=>{
             
         }
     }
+}
+
+export const createBooking =async (e, firstName, surname, groupSize, phoneNumber,date,time)=>{
+  try {
+    e.preventDefault();
+    
+    const response = await fetch(`${process.env.REACT_APP_BACK_END}bookings`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        date:date,
+        time:time,
+        custName:firstName,
+        custSurname:surname,
+        people:groupSize,
+        phoneNum:phoneNumber
+        
+      }),
+    });
+    const data = await response.json();
+    console.log(data)
+  } catch (error) {
+    console.log(error)
+    
+  }
 }
