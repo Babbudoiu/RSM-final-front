@@ -1,12 +1,12 @@
 import React from "react";
+import Clock from 'react-live-clock';
 
 const Footer = () => {
-    let today = new Date(),
-    time = today.getHours() + ':' + today.getMinutes();
 
     return(
         <div className="footer">
-            <p>{time}</p>
+           <Clock 
+           format={'HH:mm'} ticking={true} timezone={'GB'} />
         </div>
     )
 };

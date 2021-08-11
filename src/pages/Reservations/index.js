@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 import MealTimes from '../../components/MealTimes';
 
 
-const Reservations = () => {
+const Reservations = ({setUser}) => {
    const [date, setDate] = useState(new Date());
    const [showMeals, setShowMeals] = useState(false);
 
@@ -16,7 +16,7 @@ const Reservations = () => {
     
     return (
        <>
-        <Navbar /> 
+        <Navbar setUser={setUser} /> 
         <div>
         <Calendar onChange={onChange} value={date} onClickDay={() => 
         {setShowMeals(true)}}/>
@@ -27,7 +27,5 @@ const Reservations = () => {
     )
 }
 
-
-
-export default Reservations
+export default Reservations;
 
