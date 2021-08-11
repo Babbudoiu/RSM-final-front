@@ -6,7 +6,7 @@ const Footer = () => {
     return(
         <div className="footer">
            <Clock 
-           format={'HH:mm'} ticking={true} timezone={'GMT +1'} />
+           format={'HH:mm'} ticking={true} timezone={'GB'} />
         </div>
     )
 };
