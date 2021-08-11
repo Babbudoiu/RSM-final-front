@@ -8,7 +8,7 @@ export const AdminLogin = ({setAdmin}) => {
     const [adminPassword, setAdminPassword] = useState();
   return (
     <LandingContainer>
-      
+       <h1>Restaurant Manager System</h1><p>v 0.1</p><p>build 0.001</p>
       <FormContainer>
         <LogForm
           onSubmit={(e) => fetchAdmin(e, adminUsername, adminPassword, setAdmin)}
