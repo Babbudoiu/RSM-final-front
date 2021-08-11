@@ -2,16 +2,18 @@ import React from 'react'
 import { Nav, NavLogo, NavbarContainer, NavMenu, NavItem, NavLinks} from './NavbarElements';
 
 export const Navbar = ({setUser}) => {
+
     const logoutHandler = (e) => {
         e.preventDefault();
         localStorage.removeItem("MyToken");
         setUser();
+
     }
     return (
         <>
          <Nav>
              <NavbarContainer>
-                 <NavLogo to= '/'>Walrus</NavLogo>
+                 <NavLogo to= '/home'>Walrus</NavLogo>
                  <NavMenu>
                     <NavItem>
                         <NavLinks to="reservations">Reservations</NavLinks>
@@ -25,7 +27,7 @@ export const Navbar = ({setUser}) => {
                  </NavMenu>
                  <button 
                  className = "logOutBtn"
-                 onClick = { logoutHandler } >Log Out</button>
+                 onClick = {logoutHandler} >Log Out</button>
              </NavbarContainer>
          </Nav>
         </>

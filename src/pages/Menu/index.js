@@ -2,12 +2,12 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
-const Menu = () => {
+const Menu = ({setUser}) => {
     return (
-       <>
-        <Navbar/>
+       <div>
+        <Navbar setUser={setUser}/>
         <Footer />
-       </>
+       </div>
     )
 }
 
