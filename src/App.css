@@ -41,3 +41,27 @@ body {
   background-color: black;
   color: white;
 }
+
+.bookings {
+  display: flex;
+  flex-direction: column;
+  background-color:antiquewhite;
+}
+
+.bookings label {
+  text-align: center;
+}
+
+.bookingInp {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.meals {
+  position: absolute;
+  top: 10%;
+  right: 50%;
+  width: 30%;
+}
+

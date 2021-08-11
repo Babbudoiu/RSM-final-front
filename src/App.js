@@ -11,6 +11,8 @@ import { authUser } from "./utils";
 const App  = () => {
   const [admin, setAdmin] = useState();
   const[user, setUser]=  useState();
+  const [lunch, setLunch] = useState(false);
+  const [dinner, setDinner] = useState(false);
   
   useEffect(()=>{
     authUser(setUser)
@@ -20,7 +22,12 @@ const App  = () => {
     <Router>
 
        <Route path='/reservations'>
-      <Reservations setUser={setUser}/>
+      <Reservations 
+      setUser={setUser}
+      lunch={lunch}
+      setLunch={setLunch}
+      dinner={dinner}
+      setDinner={setDinner}/>
        </Route>
        <Route path="/menu">
          <Menu setUser={setUser} />
