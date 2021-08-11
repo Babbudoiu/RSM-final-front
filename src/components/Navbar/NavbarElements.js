@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link as LinkR} from 'react-router-dom';
 
-
 export const Nav = styled.nav`
  background: black;
  height: 80px;
@@ -41,6 +40,22 @@ export const NavbarContainer = styled.div`
  font-weight: center;
  text-decoration: none; 
  `;
+
+
+export const MobileIcon = styled.div`
+ display: none;
+
+ @media screen and (max-width: 768px) {
+     display: block;
+     position: absolute;
+     top: 0;
+     right: 0;
+     transform: translate(-100%, 60%);
+     font-size: 1.8rem;
+     cursor: pointer;
+     color: red ;
+ } 
+`;
 
 export const NavMenu = styled.ul`
  display: flex;
@@ -100,3 +115,4 @@ export const NavBtnLink = styled(LinkR)`
      color: #01bf71;
  }
 `;
+
