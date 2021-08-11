@@ -34,11 +34,6 @@ export const UserLogin = ({setUser, setAdmin}) => {
         </LogButton>
         
 {setting ===1?
-
-
-
-
-      
       <FormContainer>
         <LogForm
           onSubmit={(e) => fetchUsers(e, userUsername, userPassword,  setUser)}

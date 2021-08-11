@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import LunchBookings from '../Bookings';
+import DinnerBookings from '../BookingsDinner';
 
-export const MealTimes = ({showMeals}) => {
 
-const [lunch, setLunch] = useState(true);
-const [dinner, setDinner] = useState(true);
+export const MealTimes = ({showMeals, lunch, setLunch, dinner, setDinner}) => {
 
 const lunchHandler = () => {
     if (lunch === true) {
@@ -22,12 +22,19 @@ const dinnerHandler = () => {
     }
 
     return (
-       <div className="meals" style={showMeals ? {} : {display: 'none'}}>  
+       <div className="meals" style={showMeals ? {} : {display: 'none'}}>
+           <div className="mealBtn">
            <p>Lunch or Dinner?</p>
-           <button onClick={lunchHandler}>Lunch</button>
-           <button onClick={dinnerHandler}>Dinner</button>
-           </div> 
-       
+           <button 
+           onClick={lunchHandler}>Lunch</button>
+           <button 
+           onClick={dinnerHandler}>Dinner</button>
+           </div>
+      
+        {lunch? <LunchBookings /> : <> </>}
+        {dinner? <DinnerBookings /> : <> </>}
+    
+      </div> 
     )
 }
 
