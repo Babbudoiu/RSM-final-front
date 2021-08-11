@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { FormContainer, LandingContainer, LogButton, LogForm, LogInput } from "../../styledComponents";
-
 import { fetchAdmin } from "../../utils";
-
-
+import Footer from "../../components/Footer";
 
 export const AdminLogin = ({setAdmin}) => {
     const [adminUsername, setAdminUsername] = useState();
@@ -25,10 +23,9 @@ export const AdminLogin = ({setAdmin}) => {
             placeholder="Admin Password"></LogInput>
           <LogButton type="submit">Admin Login</LogButton>
           
-          
-        
-        </LogForm>
+         </LogForm>
       </FormContainer>
+      <Footer />
     </LandingContainer>
   );
 };
