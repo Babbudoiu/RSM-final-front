@@ -38,7 +38,7 @@ const App  = () => {
       </Route>
 
       <Route exact path="/userLogin">
-        <UserLogin setUser={setUser} />
+        <UserLogin setUser={setUser} setAdmin={setAdmin} />
       </Route>
 
       <Route exact path="/home">
