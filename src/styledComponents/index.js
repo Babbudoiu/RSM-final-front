@@ -11,8 +11,7 @@ font-size: 16px;
 color: var(--primary);
 border: none;
 border-radius: 5px;
-
-
+cursor: pointer;
 `;
 
 export const LogForm = styled.form`
@@ -20,7 +19,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-width: 100%;
 `;
 
 export const LogInput = styled.input`
@@ -29,19 +27,10 @@ export const LogInput = styled.input`
   margin: 5px;
 `;
 
-
-export const PageContainer = styled.div`
-  width: 100vw;
-  height: 85vh;
-`;
-
 export const FormContainer = styled.div`
-  width: 350px;
   background-color: var(--white);
   border-radius: 5px;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
   text-align: center;
 `;
 
@@ -49,10 +38,6 @@ export const LandingContainer = styled.div`
   font-family: sans-serif;
   background-color: var(--primary);
   color: var(--white);
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  height: 100%;
 `;
