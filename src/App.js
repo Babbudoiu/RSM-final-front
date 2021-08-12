@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import "./App.css"
 import Reservations from "./pages/Reservations"
 import Menu from "./pages/Menu";
 import SeatingPlan from "./pages/SeatingPlan"
@@ -7,7 +8,6 @@ import { AdminLogin } from "./pages/AdminLogin";
 import { UserLogin } from "./pages/userLogin";
 import { Home } from "./pages/home";
 import { authUser } from "./utils";
-import Footer from "./components/Footer"; 
 
 const App  = () => {
   const [admin, setAdmin] = useState();
@@ -22,7 +22,6 @@ const App  = () => {
   return(
     <Router>
         <div className="container">
-          <div className="children-container">
        <Route path='/reservations'>
       <Reservations 
       setUser={setUser}
@@ -53,8 +52,7 @@ const App  = () => {
       <Route exact path="/home">
         <Home setUser={setUser}/>
       </Route>
-    <Footer />
-    </div>
+   
     </div>
     </Router>
   )

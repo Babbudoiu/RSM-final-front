@@ -4,10 +4,52 @@
   box-sizing: border-box;
 }
 
-:root {
-    --primary:white;
-    --secondary: black;
-    --tertiary: gray;
+h1, h2, p {
+  color: #fff;
+}
+
+body {
+  background-image: url("./logo/The\ Walrus\ Logo\ \(2\).png");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.children-container {
+  flex:1;
+}
+
+.logBtn{
+  width: 300px;
+  height: 5vh;
+  margin: 5px;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logInput {
+  width: 300px;
+  padding: 10px;
+  margin: 5px;
 }
 
 .logOutBtn {
@@ -34,6 +76,7 @@
   width: 100%;
   background-color: black;
   color: white;
+  text-align: right;
 }
 
 .bookings {
@@ -59,8 +102,6 @@
   width: 30%;
 }
 
-
-
 .tables {
   display: flex;
   flex-wrap: wrap;
@@ -82,8 +123,4 @@
 .tables button:hover{
   background:rgba(0,0,0,0.3);
   cursor: pointer;
-}
-
-.container {
-  min-height: 100vh;
 }
