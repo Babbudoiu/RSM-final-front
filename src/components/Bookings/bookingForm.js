@@ -23,7 +23,7 @@ import { createBooking } from "../../utils";
           }
         >
           <label>{time}</label>
-          <button type="submit">Comfirm Booking</button>
+          <button type="submit">Confirm Booking</button>
           <input
             type="text"
             className="bookingInp"
