@@ -152,14 +152,11 @@ export const createMenuEntries = async (e, course, dish, price, dietary, setMenu
 
    export const menuList = async (setMenu) => {
     let response;
-    console.log("hello");
     try {
        response = await fetch(`${process.env.REACT_APP_BACK_END}menu`, {
          method:"GET"
        })
-       console.log(response);
     const data = await response.json();
-    console.log(data);
     setMenu(data);
     } catch (error) {
         console.log(error);
