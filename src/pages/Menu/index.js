@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 import { createMenuEntries, menuList } from '../../utils';
 import ItemsTable from '../../components/ItemsTable';
 
@@ -18,6 +19,7 @@ const Menu = ({setUser}) => {
     
     return (
         <div className="container">
+            <div className="children-container">
         <Navbar setUser={setUser}/>
         <h2>Add menu items</h2>
         <form onSubmit={(e) => createMenuEntries(e, course, dish, price, dietary, setMenu, menu)}>
@@ -42,6 +44,8 @@ const Menu = ({setUser}) => {
         </form>
 
         <ItemsTable menu={menu} /> 
+       </div>
+       <Footer />
        </div>
     )
 }

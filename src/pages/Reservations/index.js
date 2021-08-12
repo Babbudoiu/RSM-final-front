@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import MealTimes from '../../components/MealTimes';
 import Calendar from 'react-calendar';
+import Footer from '../../components/Footer';
 import 'react-calendar/dist/Calendar.css';
 
 const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
@@ -13,9 +14,10 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
    }
     
     return (
-       <>
-        <Navbar setUser={setUser} /> 
         <div className="container">
+            <div className="children-container">
+        <Navbar setUser={setUser} /> 
+        
         <MealTimes 
         showMeals={showMeals}
         lunch={lunch}
@@ -31,7 +33,10 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
         
 
        </div>
-       </> 
+
+       <Footer />
+       </div>
+       
     )
 }
 

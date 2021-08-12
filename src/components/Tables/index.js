@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TabOrder from '../TabOrder';
 
 export const Tables = () => {
 
@@ -6,7 +7,7 @@ export const Tables = () => {
      <div>
         <div className="tables">
         <div>
-            <button>Table 1</button>
+            <button onClick>Table 1</button>
             <button>Table 2</button>
             <button>Table 3</button>
         </div>
