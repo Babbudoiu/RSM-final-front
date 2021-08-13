@@ -12,9 +12,10 @@ import TabOrder from "./pages/TabOrder";
 
 const App  = () => {
   const [admin, setAdmin] = useState();
-  const[user, setUser]=  useState();
+  const [user, setUser]=  useState();
   const [lunch, setLunch] = useState(false);
   const [dinner, setDinner] = useState(false);
+  const [table, setTable] = useState("");
   
   useEffect(()=>{
     authUser(setUser)
@@ -55,7 +56,7 @@ const App  = () => {
       </Route>
 
       <Route exact path="/taborder">
-        <TabOrder setUser={setUser} />
+        <TabOrder setUser={setUser} table={table} setTable={setTable} />
       </Route>
    
     </div>

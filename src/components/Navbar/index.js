@@ -1,8 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from "../../Logo/The\ Walrus\ Logo\ \(2\).png"
-
-// import { Nav, NavLogo, NavbarContainer, NavMenu, NavItem, NavLinks} from './NavbarElements';
 
 export const Navbar = ({setUser}) => {
 

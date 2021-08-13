@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Tables = () => {
+export const Tables = ({setTable}) => {
 
     return (
      <div>
         <div className="tables">
         <div>
             <Link to="/taborder" >
-                <button type="button">Table1</button>
+                <button 
+                onClick={() => {
+                    setTable("1")
+                }}
+                type="button">Table1</button>
             </Link>
             <Link to="/taborder" >
                 <button type="button">Table2</button>
