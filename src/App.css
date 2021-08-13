@@ -89,19 +89,31 @@ body {
 }
 
 .bookings label {
+  
   text-align: center;
+  color: darkgoldenrod;
 }
 
+.bookingBut{
+  margin-left: 35px;
+  color: darkgoldenrod;
+  background-color:black;
+  border-color: darkgoldenrod
+}
 .bookingInp {
   width: 60%;
   text-align: center;
   margin: 0 auto;
+  color: darkgoldenrod;
+  background-color:black;
+  border-color: darkgoldenrod;
 }
 
 .meals {
   position: absolute;
+  color: darkgoldenrod;
   top: 10%;
-  right: 50%;
+  right: 40%;
   width: 30%;
 }
 

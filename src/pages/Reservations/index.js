@@ -27,7 +27,12 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
         <div className="container">
             <div className="children-container">
         <Navbar setUser={setUser} /> 
-        
+        <Calendar 
+        onChange={onChange} 
+        value={date} 
+        onClickDay={(e) => 
+        {setShowMeals(true)}}/>
+
         <MealTimes 
         showMeals={showMeals}
         lunch={lunch}
@@ -35,13 +40,10 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
         dinner={dinner}
         setDinner={setDinner}
         date={date}/>
+        
         {currentBookings?<CurrentBookingFormat currentBookings={currentBookings}/>:<></> }
         
-        <Calendar 
-        onChange={onChange} 
-        value={date} 
-        onClickDay={(e) => 
-        {setShowMeals(true)}}/>
+        
         
 
        </div>
