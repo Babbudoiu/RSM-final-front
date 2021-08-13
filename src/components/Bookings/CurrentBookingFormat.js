@@ -6,15 +6,15 @@ export const CurrentBookingFormat = ({currentBookings})=>{
      
     return(
         
-        <div>
+        <div className="booking-container">
         {currentBookings[0] !== undefined ?
-<table >
+                    <table className="booking-table">
                     <thead>
                         <tr>
-                        <td>Time</td>
-                        <td>Name</td>
-                        <td>Group Size</td>
-                        <td>Phone Number</td>
+                        <td className="td-border">Time</td>
+                        <td className="td-border">Name</td>
+                        <td className="td-border">Group Size</td>
+                        <td className="td-border">Phone Number</td>
                         </tr>
                     </thead>
             
@@ -23,8 +23,8 @@ export const CurrentBookingFormat = ({currentBookings})=>{
 
                             return(
                                 <tr>
-                                    <td>{time}</td>
-                                    <td>{currentBookings[0][index].map((booking)=>{
+                                    <td className="td-border">{time}</td>
+                                    <td className="td-border">{currentBookings[0][index].map((booking)=>{
                                         return(
                                             <>
                                             {booking !== null?
@@ -32,10 +32,10 @@ export const CurrentBookingFormat = ({currentBookings})=>{
                         <td>{`${booking[0]} ${booking[1]}`}</td>
                         
                     </tr>
-                          :<></> }    </>         )
+                          :<></> }  </> )
 
                                     })}</td>
-                                    <td>{currentBookings[0][index].map((booking)=>{
+                                    <td className="td-border">{currentBookings[0][index].map((booking)=>{
                                         return(
                                             <>
                                             {booking !== null?
@@ -44,18 +44,18 @@ export const CurrentBookingFormat = ({currentBookings})=>{
                         <td>{booking[2]}</td>
                         
                     </tr>
-                          :<></> }    </>         )
+                          :<></> } </>  )
 
                                     })}</td>
-                                    <td>{currentBookings[0][index].map((booking)=>{
+                                    <td className="td-border">{currentBookings[0][index].map((booking)=>{
                                         return(
                                             <>
                                             {booking !== null?
                                             <tr>
                         
-                        <td>{booking[3]}</td>
+                        <td className="center-td">{booking[3]}</td>
                     </tr>
-                          :<></> }    </>         )
+                          :<></> } </> )
 
                                     })}</td>
                                 </tr>

@@ -9,6 +9,6 @@ const TabOrder =({table, setUser}) => {
             </Link>
         </div>
     )
-}
+};
 
 export default TabOrder;

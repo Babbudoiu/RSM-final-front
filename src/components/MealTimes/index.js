@@ -19,7 +19,6 @@ const dinnerHandler = () => {
         setDinner(false)
     } else if(dinner === false) {
         setDinner(true)}
-        console.log(dinner)
     }
 
     return (
