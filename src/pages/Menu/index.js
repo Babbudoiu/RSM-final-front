@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import { createMenuEntries, menuList } from '../../utils';
+import { createMenuEntries, menuList, deleteCourse } from '../../utils';
 import ItemsTable from '../../components/ItemsTable';
 
 const Menu = ({setUser}) => {
@@ -41,6 +41,11 @@ const Menu = ({setUser}) => {
             placeholder="Suitable for..." 
             onChange={(e) =>setDietary(e.target.value)}/>
             <button type="submit">Add</button>
+            <button type="button"
+            onClick={() => {
+                deleteCourse(course, dish)
+                setLoaded(false)
+            }}>Delete</button>
         </form>
 
         <ItemsTable menu={menu} /> 

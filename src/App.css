@@ -53,6 +53,7 @@ body {
   width: 300px;
   padding: 10px;
   margin: 5px;
+  background-color:antiquewhite;
 }
 
 .logOutBtn {
@@ -191,6 +192,10 @@ thead{
 
 td {
   width: 150px;
+}
+
+.items-table {
+  float:none;
 }
 
 

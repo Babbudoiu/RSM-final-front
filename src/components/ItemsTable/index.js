@@ -6,7 +6,7 @@ const ItemsTable = ({menu}) => {
              {menu.map((item,index) => {
                  return (
                     
-                    <table key={index}>
+                    <table className="items-table" key={index}>
                     <thead>
                         <tr>
                         <td>Course</td>
