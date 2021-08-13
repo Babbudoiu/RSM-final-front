@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createBooking } from "../../utils";
 
 
-   export const Bookings = (date, time) => {
+   export const Bookings = (date, time, index, index2) => {
       const [firstName, setFirstName] = useState();
       const [surname, setsurname] = useState();
       const [groupSize, setGroupSize] = useState();
@@ -18,12 +18,13 @@ import { createBooking } from "../../utils";
               groupSize,
               phoneNumber,
               date,
-              time
+              index,
+              index2,
             )
           }
         >
           <label>{time}</label>
-          <button type="submit">Comfirm Booking</button>
+          
           <input
             type="text"
             className="bookingInp"
@@ -48,6 +49,7 @@ import { createBooking } from "../../utils";
             onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="Phone Number"
           ></input>
+          <button type="submit">Comfirm Booking</button>
         </form>
       );
     }
