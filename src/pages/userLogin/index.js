@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-// import { FormContainer, LandingContainer, LogButton, LogForm, LogInput } from "../../styledComponents";
 import { fetchUsers } from "../../utils";
 import { createUsers } from "../../utils";
-
 
 export const UserLogin = ({setUser, setAdmin}) => {
     const [userUsername, setUserUsername] = useState();
@@ -11,7 +9,7 @@ export const UserLogin = ({setUser, setAdmin}) => {
     const [setting, setSetting] = useState(1);
   return (
     <div className="container">
-    {/* <LandingContainer> */}
+
         <button 
           className="logBtn"
           type="button"
@@ -71,7 +69,7 @@ export const UserLogin = ({setUser, setAdmin}) => {
         
     </form>
     </div> : <></>}
-    {/* </LandingContainer> */}
+
     </div>
   );
 };
