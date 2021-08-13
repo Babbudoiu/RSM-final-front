@@ -191,6 +191,7 @@ export const getBookings = async (
       `${process.env.REACT_APP_BACK_END}bookings/${day}`
     );
     const data = await response.json();
+
         if(data.targetBookings !== null) {
           await setCurrentBookings(data.targetBookings.dayArray);
         } else {
@@ -229,6 +230,7 @@ export const getBookings = async (
           setCurrentBookings(dayArray)
         }
     
+
   } catch (error) {
     console.log(error);
   }

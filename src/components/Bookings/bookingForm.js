@@ -9,7 +9,7 @@ import { createBooking } from "../../utils";
       const [phoneNumber, setPhoneNumber] = useState();
   
       return (
-        <div>
+        <div className='bookingform'>
         <form
           onSubmit={(e) =>
             createBooking(
@@ -24,12 +24,13 @@ import { createBooking } from "../../utils";
             )
           }
         >
+          <div> 
           <label>{time}</label>
 
           
-          <button type="submit">Confirm Booking</button>
-
-          <input
+          <button className = "bookingBut" type="submit">Confirm Booking</button>
+        </div>
+          <input 
             type="text"
             className="bookingInp"
             onChange={(e) => setFirstName(e.target.value)}
@@ -53,7 +54,7 @@ import { createBooking } from "../../utils";
             onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="Phone Number"
           ></input>
-          <button type="submit">Comfirm Booking</button>
+          
         </form>
         </div>
       );
