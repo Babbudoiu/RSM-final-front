@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const TabOrder =({setUser}) => {
+const TabOrder =({table, setUser}) => {
     return (
         <div>
             <Link to="/seating-plan">
