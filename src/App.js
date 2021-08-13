@@ -8,6 +8,7 @@ import { AdminLogin } from "./pages/AdminLogin";
 import { UserLogin } from "./pages/userLogin";
 import { Home } from "./pages/home";
 import { authUser } from "./utils";
+import TabOrder from "./pages/TabOrder";
 
 const App  = () => {
   const [admin, setAdmin] = useState();
@@ -51,6 +52,10 @@ const App  = () => {
 
       <Route exact path="/home">
         <Home setUser={setUser}/>
+      </Route>
+
+      <Route exact path="/taborder">
+        <TabOrder setUser={setUser} />
       </Route>
    
     </div>
