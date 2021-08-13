@@ -191,8 +191,44 @@ export const getBookings = async (
       `${process.env.REACT_APP_BACK_END}bookings/${day}`
     );
     const data = await response.json();
-
-    await setCurrentBookings(data.targetBookings.dayArray);
+        if(data.targetBookings !== null) {
+          await setCurrentBookings(data.targetBookings.dayArray);
+        } else {
+          let dayArray = [
+            [
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+            ],
+            [
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+            ],
+          ];
+          setCurrentBookings(dayArray)
+        }
+    
   } catch (error) {
     console.log(error);
   }
