@@ -32,8 +32,9 @@ export const fetchUsers = async (e, username, password, setUser) => {
       }
     );
     const data = await response.json();
-    console.log(data);
-    localStorage.setItem("MyToken", data.token);
+
+    localStorage.setItem('MyToken',data.token)
+
     setUser(data.user.name);
   } catch (error) {
     console.log(error);
@@ -74,6 +75,7 @@ export const authUser = async (setUser) => {
   }
 };
 
+
 export const createBooking = async (
   e,
   firstName,
@@ -84,6 +86,7 @@ export const createBooking = async (
   index,
   index2
 ) => {
+
   try {
     e.preventDefault();
     
@@ -94,6 +97,7 @@ export const createBooking = async (
     );
     console.log(response);
     const data = await response.json();
+
     console.log(data.targetBookings);
 
     const booking = [[firstName], [surname], [groupSize], [phoneNumber]];
@@ -170,6 +174,7 @@ export const createBooking = async (
       console.log(data2);
       console.log(data.targetBookings.dayArray);
     }
+
   } catch (error) {
     console.log(error);
   }
@@ -192,3 +197,74 @@ export const getBookings = async (
     console.log(error);
   }
 };
+
+
+export const createMenuEntries = async (e, course, dish, price, dietary, setMenu , menu) => {
+  e.preventDefault();
+
+    let glutenFree = false;
+    if(dietary === "gluten free"){
+    glutenFree = true;
+    }
+
+    
+    let vegan = false;
+    if(dietary === "vegan"){
+    vegan = true;
+    }
+
+    
+    let vegetarian = false;
+    if(dietary === "vegetarian"){
+    vegetarian = true;
+    }
+
+    
+    let dairyFree = false;
+    if(dietary === "dairy free"){
+    dairyFree = true;
+    }
+
+    
+    let nuts = false;
+    if(dietary === "nuts"){
+    nuts = true;
+    }
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACK_END}menu`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            course: course,
+            name: dish,
+            price: price,
+            dietary: [vegan, vegetarian, dairyFree , glutenFree, nuts ]
+        })
+    })
+      const data = await response.json();
+      if(menu.length > 0) {
+        setMenu([...menu, data.menu])
+      } else {
+      setMenu([data.menu])
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+   export const menuList = async (setMenu) => {
+    let response;
+    try {
+       response = await fetch(`${process.env.REACT_APP_BACK_END}menu`, {
+         method:"GET"
+       })
+    const data = await response.json();
+    setMenu(data);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+  
+

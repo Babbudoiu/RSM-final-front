@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { FormContainer, LandingContainer, LogButton, LogForm, LogInput } from "../../styledComponents";
-import Footer from "../../components/Footer";
 import { fetchUsers } from "../../utils";
 import { createUsers } from "../../utils";
-
 
 export const UserLogin = ({setUser, setAdmin}) => {
     const [userUsername, setUserUsername] = useState();
@@ -11,65 +8,68 @@ export const UserLogin = ({setUser, setAdmin}) => {
     const [role, setRole] = useState()
     const [setting, setSetting] = useState(1);
   return (
-     
-    <LandingContainer>
-        <LogButton
+    <div className="container">
+
+        <button 
+          className="logBtn"
           type="button"
           onClick={() => setSetting(1)}
         >
           Log in
-        </LogButton>
+        </button>
         
-        <LogButton
+        <button
+          className="logBtn"
           type="button"
           onClick={() => setSetting(2)}
         >
           Create User
-        </LogButton>
-        <LogButton
+        </button>
+        <button
+          className="logBtn"
           type="button"
           onClick={() => setAdmin()}
         >
           Admin Log Out
-        </LogButton>
+        </button>
         
 {setting ===1?
-      <FormContainer>
-        <LogForm
+      <div className="form-container">
+        <form className="logForm"
           onSubmit={(e) => fetchUsers(e, userUsername, userPassword,  setUser)}
         >                     
-          <LogInput
+          <input className="logInput"
             onChange={(e) => setUserUsername(e.target.value)}
             placeholder="name"
           />
          
-          <LogInput type="password"
+          <input className="logInput" type="password"
             onChange={(e) => setUserPassword(e.target.value)}
-            placeholder="Password"></LogInput>
-          <LogButton type="submit">User Login</LogButton>
-          </LogForm>
-          </FormContainer>: <></>}
+            placeholder="Password"></input>
+          <button className="logBtn" type="submit">User Login</button>
+          </form>
+          </div>: <></>}
           {setting ===2?
-      <FormContainer>
-      <LogForm
+      <div className="form-container">
+      <form className="logForm"
         onSubmit={(e) => createUsers(e, userUsername, userPassword,role, setUser)}
       >                     
-        <LogInput
+        <input className="logInput"
           onChange={(e) => setUserUsername(e.target.value)}
           placeholder="User Username"
         /> 
-        <LogInput
+        <input className="logInput"
             onChange={(e) => setRole(e.target.value)}
             placeholder="User Role"
           />
-        <LogInput type="password"
+        <input className="logInput" type="password"
           onChange={(e) => setUserPassword(e.target.value)}
-          placeholder="User Password"></LogInput>
-        <LogButton type="submit">User Login</LogButton>
+          placeholder="User Password"></input>
+        <button className="logBtn" type="submit">User Login</button>
         
-    </LogForm>
-    </FormContainer> : <></>}
-    <Footer />
-    </LandingContainer>
+    </form>
+    </div> : <></>}
+
+    </div>
   );
 };

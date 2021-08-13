@@ -4,8 +4,10 @@ import Footer from '../../components/Footer';
 
 export const Home =({setUser})=>{
 return (
-    <div>
+    <div className="container">
+        <div className="children-container">
     <Navbar setUser={setUser}/> 
+    </div>
     <Footer />
     </div>
 )

@@ -9,6 +9,7 @@ import { createBooking } from "../../utils";
       const [phoneNumber, setPhoneNumber] = useState();
   
       return (
+        <div>
         <form
           onSubmit={(e) =>
             createBooking(
@@ -24,7 +25,10 @@ import { createBooking } from "../../utils";
           }
         >
           <label>{time}</label>
+
           
+          <button type="submit">Confirm Booking</button>
+
           <input
             type="text"
             className="bookingInp"
@@ -51,5 +55,6 @@ import { createBooking } from "../../utils";
           ></input>
           <button type="submit">Comfirm Booking</button>
         </form>
+        </div>
       );
     }

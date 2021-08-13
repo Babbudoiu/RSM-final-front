@@ -1,24 +1,47 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export const Tables = () => {
+export const Tables = ({setTable}) => {
 
     return (
      <div>
         <div className="tables">
         <div>
-            <button>Table 1</button>
-            <button>Table 2</button>
-            <button>Table 3</button>
+            <Link to="/taborder" >
+                <button 
+                onClick={() => {
+                    setTable("1")
+                }}
+                type="button">Table1</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table2</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table3</button>
+            </Link>
         </div>
         <div>
-            <button>Table 4</button>
-            <button>Table 5</button>
-            <button>Table 6</button>
+           <Link to="/taborder" >
+                <button type="button">Table4</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table5</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table6</button>
+            </Link>
         </div>
         <div>
-            <button>Table 7</button>
-            <button>Table 8</button>
-            <button>Table 9</button>
+            <Link to="/taborder" >
+                <button type="button">Table7</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table8</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table9</button>
+            </Link>
         </div>
         </div>
     </div>

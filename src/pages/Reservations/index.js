@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
 import MealTimes from '../../components/MealTimes';
 import Calendar from 'react-calendar';
+import Footer from '../../components/Footer';
 import 'react-calendar/dist/Calendar.css';
 import { getBookings } from '../../utils';
 import { CurrentBookingFormat } from '../../components/Bookings/CurrentBookingFormat';
@@ -24,9 +24,10 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
   },[date])
 
     return (
-       <>
+        <div className="container">
+            <div className="children-container">
         <Navbar setUser={setUser} /> 
-        <div>
+        
         <MealTimes 
         showMeals={showMeals}
         lunch={lunch}
@@ -42,9 +43,12 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
         onClickDay={(e) => 
         {setShowMeals(true)}}/>
         
-        <Footer />
+
        </div>
-       </> 
+
+       <Footer />
+       </div>
+       
     )
 }
 
