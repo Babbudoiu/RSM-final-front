@@ -191,8 +191,46 @@ export const getBookings = async (
       `${process.env.REACT_APP_BACK_END}bookings/${day}`
     );
     const data = await response.json();
-console.log(data.targetBookings)
-    await setCurrentBookings(data.targetBookings.dayArray);
+
+        if(data.targetBookings !== null) {
+          await setCurrentBookings(data.targetBookings.dayArray);
+        } else {
+          let dayArray = [
+            [
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+            ],
+            [
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+              [null],
+            ],
+          ];
+          setCurrentBookings(dayArray)
+        }
+    
+
   } catch (error) {
     console.log(error);
   }
@@ -264,6 +302,24 @@ export const createMenuEntries = async (e, course, dish, price, dietary, setMenu
     } catch (error) {
         console.log(error);
     }
+};
+
+export const deleteCourse = async (course, name) => {
+  try {
+      let response;
+      
+      if (course) {
+          response = await fetch(`${process.env.REACT_APP_BACK_END}menu/${name}`, {
+              method:'DELETE',
+              headers:{'content-Type' : 'application/json'},
+              name: course.name
+          })
+      }
+      await response.json();
+  
+  } catch (error) {
+      console.log(error);
+  }
 };
 
   

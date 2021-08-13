@@ -22,7 +22,7 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
    useEffect(()=>{
     getBookings(date,setCurrentBookings)
   },[date])
-
+                console.log(currentBookings);
     return (
         <div className="container">
             <div className="children-container">
