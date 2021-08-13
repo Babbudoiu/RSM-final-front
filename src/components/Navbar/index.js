@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Logo from "../../Logo/The\ Walrus\ Logo\ \(2\).png"
 
 // import { Nav, NavLogo, NavbarContainer, NavMenu, NavItem, NavLinks} from './NavbarElements';
 
@@ -15,7 +16,7 @@ export const Navbar = ({setUser}) => {
         <div className="navbar">
         <NavLink 
         to="/home" 
-        className="navlink">Home</NavLink>
+        className="navlink">Walrus</NavLink>
         <NavLink 
         to="/reservations"
         className="navlink">Reservations</NavLink>
@@ -25,7 +26,7 @@ export const Navbar = ({setUser}) => {
         <NavLink 
         to="/menu"  
         className="navlink">Menu</NavLink>
-        <button onClick={logoutHandler}>Sign Out</button>
+        <button className="navBtn" onClick={logoutHandler}>Sign Out</button>
     </div>
     )
 }
