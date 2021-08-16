@@ -1,22 +1,13 @@
 import React from "react";
-import { DinnerTimes } from "./DinnerTimes";
 import { LunchTimes } from "./LunchTimes";
 
-export const CurrentBookingFormat = ({currentBookings, dinner,lunch})=>{
+export const CurrentBookingFormat = ({currentBookings})=>{
   
-     let timeSelector 
-     let times=[]
-     if(dinner===true){
-         times=DinnerTimes
-         timeSelector=1
-     }else if (lunch===true){
-        times=LunchTimes
-         timeSelector=0 
-     }
+     
     return(
         
         <div className="booking-container">
-        {currentBookings[timeSelector] !== undefined ?
+        {currentBookings[0] !== undefined ?
                     <table className="booking-table">
                     <thead>
                         <tr>
@@ -28,41 +19,41 @@ export const CurrentBookingFormat = ({currentBookings, dinner,lunch})=>{
                     </thead>
             
                     <tbody>
-                        {times.map((time,index)=>{
+                        {LunchTimes.map((time,index)=>{
 
                             return(
-                                <tr key= {index}>
+                                <tr>
                                     <td className="td-border">{time}</td>
-                                    <td className="td-border">{currentBookings[timeSelector][index].map((booking,index2)=>{
+                                    <td className="td-border">{currentBookings[0][index].map((booking)=>{
                                         return(
                                             <>
                                             {booking !== null?
-                                            <tr key = {index2}>
+                                            <tr>
                         <td>{`${booking[0]} ${booking[1]}`}</td>
                         
                     </tr>
                           :<></> }  </> )
 
                                     })}</td>
-                                    <td className="td-border">{currentBookings[timeSelector][index].map((booking,index2)=>{
+                                    <td className="td-border">{currentBookings[0][index].map((booking)=>{
                                         return(
                                             <>
                                             {booking !== null?
-                                            <tr key = {index2}>
+                                            <tr>
                         
-                        <td >{booking[2]}</td>
+                        <td>{booking[2]}</td>
                         
                     </tr>
                           :<></> } </>  )
 
                                     })}</td>
-                                    <td className="td-border">{currentBookings[timeSelector][index].map((booking,index2)=>{
+                                    <td className="td-border">{currentBookings[0][index].map((booking)=>{
                                         return(
                                             <>
                                             {booking !== null?
-                                            <tr key = {index2}>
+                                            <tr>
                         
-                        <td  className="center-td">{booking[3]}</td>
+                        <td className="center-td">{booking[3]}</td>
                     </tr>
                           :<></> } </> )
 

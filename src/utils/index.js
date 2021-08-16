@@ -305,18 +305,19 @@ export const createMenuEntries = async (e, course, dish, price, dietary, setMenu
 };
 
 export const deleteCourse = async (course, name) => {
+  console.log(course)
+  console.log(name)
   try {
       let response;
       
       if (course) {
           response = await fetch(`${process.env.REACT_APP_BACK_END}menu/${name}`, {
               method:'DELETE',
-              headers:{'content-Type' : 'application/json'},
-              name: course.name
+              headers:{'content-Type' : 'application/json'}
           })
       }
-      await response.json();
-  
+     const data = await response.json();
+  console.log(data)
   } catch (error) {
       console.log(error);
   }

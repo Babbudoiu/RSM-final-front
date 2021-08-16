@@ -16,6 +16,7 @@ const App  = () => {
   const [lunch, setLunch] = useState(false);
   const [dinner, setDinner] = useState(false);
   const [table, setTable] = useState("");
+  const [menu, setMenu] = useState([]);
   
   useEffect(()=>{
     authUser(setUser)
@@ -33,10 +34,10 @@ const App  = () => {
       setDinner={setDinner}/>
        </Route>
        <Route path="/menu">
-         <Menu setUser={setUser} />
+         <Menu setUser={setUser} menu ={menu} setMenu={setMenu} />
        </Route>
        <Route path ="/seating-plan">
-         <SeatingPlan setUser={setUser} />
+         <SeatingPlan setUser={setUser} setTable={setTable} />
        </Route>
       
      
@@ -56,7 +57,7 @@ const App  = () => {
       </Route>
 
       <Route exact path="/taborder">
-        <TabOrder setUser={setUser} table={table} setTable={setTable} />
+        <TabOrder setUser={setUser} table={table} setTable={setTable} menu={menu} setMenu={setMenu} />
       </Route>
    
     </div>
