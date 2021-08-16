@@ -2,10 +2,8 @@ import React from 'react';
 import DinnerBookings from '../Bookings/DinnerBookings';
 import LunchBookings from '../Bookings/LunchBooking';
 
-
-
 export const MealTimes = ({showMeals, lunch, setLunch, dinner, setDinner, date}) => {
-
+  
 const lunchHandler = () => {
     if (lunch === true) {
         setLunch(false)
@@ -28,7 +26,8 @@ const dinnerHandler = () => {
            onClick={lunchHandler}>Lunch</button>
            <button className="mealBtn dinner"
            onClick={dinnerHandler}>Dinner</button>
-      
+
+         
         {lunch? <LunchBookings date={date} /> : <> </>}
         {dinner? <DinnerBookings date={date} /> : <> </>}
     
