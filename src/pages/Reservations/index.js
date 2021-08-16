@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar";
 import MealTimes from "../../components/MealTimes";
 import Calendar from "react-calendar";
 import Footer from "../../components/Footer";
-import "react-calendar/dist/Calendar.css";
 import { getBookings } from "../../utils";
 import { CurrentBookingFormat } from "../../components/Bookings/CurrentBookingFormat";
 
@@ -56,6 +55,7 @@ const Reservations = ({ setUser, lunch, setLunch, dinner, setDinner }) => {
       </div>
 
       <Footer />
+
     </div>
   );
 };

@@ -21,10 +21,10 @@ const dinnerHandler = () => {
 
     return (
        <div className="meal" style={showMeals ? {} : {display: 'none'}}>
-           <p>Lunch or Dinner?</p>
-           <button className="mealBtn"
+           <p className="lunchOrDinner">Lunch or Dinner?</p>
+           <button className="mealBtn lunch"
            onClick={lunchHandler}>Lunch</button>
-           <button className="mealBtns"
+           <button className="mealBtn dinner"
            onClick={dinnerHandler}>Dinner</button>
 
          
