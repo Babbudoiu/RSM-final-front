@@ -19,18 +19,15 @@ const dinnerHandler = () => {
         setDinner(false)
     } else if(dinner === false) {
         setDinner(true)}
-        console.log(dinner)
     }
 
     return (
-       <div className="meals" style={showMeals ? {} : {display: 'none'}}>
-           <div className="mealBtn">
-           <p>Lunch or Dinner?</p>
-           <button 
+       <div className="meal" style={showMeals ? {} : {display: 'none'}}>
+           <p className="lunchOrDinner">Lunch or Dinner?</p>
+           <button className="mealBtn lunch"
            onClick={lunchHandler}>Lunch</button>
-           <button 
+           <button className="mealBtn dinner"
            onClick={dinnerHandler}>Dinner</button>
-           </div>
       
         {lunch? <LunchBookings date={date} /> : <> </>}
         {dinner? <DinnerBookings date={date} /> : <> </>}

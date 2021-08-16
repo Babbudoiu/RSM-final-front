@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { createBooking } from "../../utils";
 
 
-   export const Bookings = (date, time) => {
+   export const Bookings = (date, time, index, index2) => {
       const [firstName, setFirstName] = useState();
       const [surname, setsurname] = useState();
       const [groupSize, setGroupSize] = useState();
       const [phoneNumber, setPhoneNumber] = useState();
   
       return (
+        <div className='bookingform'>
         <form
           onSubmit={(e) =>
             createBooking(
@@ -18,13 +19,18 @@ import { createBooking } from "../../utils";
               groupSize,
               phoneNumber,
               date,
-              time
+              index,
+              index2,
             )
           }
         >
+          <div> 
           <label>{time}</label>
-          <button type="submit">Confirm Booking</button>
-          <input
+
+          
+         
+        </div>
+          <input 
             type="text"
             className="bookingInp"
             onChange={(e) => setFirstName(e.target.value)}
@@ -48,6 +54,11 @@ import { createBooking } from "../../utils";
             onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="Phone Number"
           ></input>
+          <br />
+
+<button className = "bookingBut" type="submit">Confirm Booking</button>
+          
         </form>
+        </div>
       );
     }

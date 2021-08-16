@@ -1,31 +1,48 @@
-import React, { useState } from 'react';
-import Panel from '../menuPanel/menuPanel.js';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export const Tables = () => {
-
-const [showMenus, setShowMenus] = useState(false);
+export const Tables = ({setTable}) => {
 
     return (
      <div>
         <div className="tables">
         <div>
-            <button onClick={(e) => {setShowMenus(true)}}>Table 1</button>
-            <button onClick={(e) => {setShowMenus(true)}}>Table 2</button>
-            <button onClick={(e) => {setShowMenus(true)}}>Table 3</button>
+            <Link to="/taborder" >
+                <button 
+                onClick={() => {
+                    setTable("1")
+                }}
+                type="button">Table1</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table2</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table3</button>
+            </Link>
         </div>
         <div>
-            <button onClick={(e) => {setShowMenus(true)}}>Table 4</button>
-            <button onClick={(e) => {setShowMenus(true)}}>Table 5</button>
-            <button onClick={(e) => {setShowMenus(true)}}>Table 6</button>
+           <Link to="/taborder" >
+                <button type="button">Table4</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table5</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table6</button>
+            </Link>
         </div>
         <div>
-            <button onClick={(e) => {setShowMenus(true)}}>Table 7</button>
-            <button onClick={(e) => {setShowMenus(true)}}>Table 8</button>
-            <button onClick={(e) => {setShowMenus(true)}}>Table 9</button>
+            <Link to="/taborder" >
+                <button type="button">Table7</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table8</button>
+            </Link>
+            <Link to="/taborder" >
+                <button type="button">Table9</button>
+            </Link>
         </div>
-        </div>
-        <div>
-             <Panel showMenus={showMenus}/>
         </div>
     </div>
     )
