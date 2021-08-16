@@ -17,6 +17,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+  background-color: #000;
 }
 
 .container {
@@ -96,13 +97,13 @@ body {
 }
 
 .bookingBut{
-  margin-left: 35px;
   color: darkgoldenrod;
   background-color:black;
-  border-color: darkgoldenrod
+  border-color: darkgoldenrod;
+
 }
 .bookingInp {
-  width: 60%;
+  width: 20%;
   text-align: center;
   margin: 0 auto;
   color: darkgoldenrod;
@@ -110,7 +111,7 @@ body {
   border-color: darkgoldenrod;
 }
 
-/* .meals {
+/* .meal {
   position: absolute;
   color: darkgoldenrod;
   top: 10%;
@@ -192,7 +193,7 @@ table, thead, .td-border{
 }
 
 table {
-  float: right;
+  margin: 0 auto;
 }
 
 thead{
@@ -207,7 +208,7 @@ td {
 }
 
 .items-table {
-  float:none;
+  float: right
 }
 
 

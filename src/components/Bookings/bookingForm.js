@@ -28,7 +28,7 @@ import { createBooking } from "../../utils";
           <label>{time}</label>
 
           
-          <button className = "bookingBut" type="submit">Confirm Booking</button>
+         
         </div>
           <input 
             type="text"
@@ -54,6 +54,9 @@ import { createBooking } from "../../utils";
             onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="Phone Number"
           ></input>
+          <br />
+
+<button className = "bookingBut" type="submit">Confirm Booking</button>
           
         </form>
         </div>

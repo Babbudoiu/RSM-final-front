@@ -22,14 +22,12 @@ const dinnerHandler = () => {
     }
 
     return (
-       <div className="meals" style={showMeals ? {} : {display: 'none'}}>
-           <div className="mealBtns">
+       <div className="meal" style={showMeals ? {} : {display: 'none'}}>
            <p>Lunch or Dinner?</p>
            <button className="mealBtn"
            onClick={lunchHandler}>Lunch</button>
            <button className="mealBtns"
            onClick={dinnerHandler}>Dinner</button>
-           </div>
       
         {lunch? <LunchBookings date={date} /> : <> </>}
         {dinner? <DinnerBookings date={date} /> : <> </>}
