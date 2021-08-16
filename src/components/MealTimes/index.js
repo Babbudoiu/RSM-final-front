@@ -3,7 +3,7 @@ import DinnerBookings from '../Bookings/DinnerBookings';
 import LunchBookings from '../Bookings/LunchBooking';
 
 export const MealTimes = ({showMeals, lunch, setLunch, dinner, setDinner, date}) => {
-
+  
 const lunchHandler = () => {
     if (lunch === true) {
         setLunch(false)
@@ -27,8 +27,7 @@ const dinnerHandler = () => {
            <button className="mealBtns"
            onClick={dinnerHandler}>Dinner</button>
 
-           { lunch && dinner === true ? <> </> : lunch === true ? setTimeSelector = 0 : dinner = true ? setTimeSelector = 1 : <> </>}
-      
+         
         {lunch? <LunchBookings date={date} /> : <> </>}
         {dinner? <DinnerBookings date={date} /> : <> </>}
     

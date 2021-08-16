@@ -9,7 +9,7 @@ import { createBooking } from "../../utils";
       const [phoneNumber, setPhoneNumber] = useState();
   
       return (
-        <div className='bookingform'>
+        <div key ={index}className='bookingform'>
         <form
           onSubmit={(e) =>
             createBooking(
