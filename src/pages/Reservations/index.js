@@ -16,23 +16,22 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
        setDate(date);
       
    }
-  
-
-    
-   useEffect(()=>{
+  useEffect(()=>{
     getBookings(date,setCurrentBookings)
   },[date])
-                console.log(currentBookings);
+            
     return (
         <div className="container">
             <div className="children-container">
         <Navbar setUser={setUser} /> 
+
+
         <Calendar 
         onChange={onChange} 
         value={date} 
         onClickDay={(e) => 
         {setShowMeals(true)}}/>
-
+        
         <MealTimes 
         showMeals={showMeals}
         lunch={lunch}
@@ -40,13 +39,12 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
         dinner={dinner}
         setDinner={setDinner}
         date={date}/>
+
+
         
         {currentBookings?<CurrentBookingFormat currentBookings={currentBookings}/>:<></> }
         
-        
-        
-
-       </div>
+    </div>
 
        <Footer />
        </div>
