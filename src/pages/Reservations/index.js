@@ -11,6 +11,7 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
    const [date, setDate] = useState(new Date());
    const [showMeals, setShowMeals] = useState(false);
    const [currentBookings,setCurrentBookings] = useState([])
+   const [timeSelector, setTimeSelector] = useState()
 
    const onChange = date => {
        setDate(date);
@@ -31,7 +32,7 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
         value={date} 
         onClickDay={(e) => 
         {setShowMeals(true)}}/>
-        
+
         <MealTimes 
         showMeals={showMeals}
         lunch={lunch}
@@ -40,9 +41,7 @@ const Reservations = ({setUser, lunch, setLunch, dinner, setDinner}) => {
         setDinner={setDinner}
         date={date}/>
 
-
-        
-        {currentBookings?<CurrentBookingFormat currentBookings={currentBookings}/>:<></> }
+         {currentBookings?<CurrentBookingFormat currentBookings={currentBookings}/>:<></> }
         
     </div>
 
