@@ -4,8 +4,8 @@ import Footer from '../../components/Footer';
 import { createMenuEntries, menuList, deleteCourse } from '../../utils';
 import ItemsTable from '../../components/ItemsTable';
 
-const Menu = ({setUser}) => {
-    const [menu, setMenu] = useState([]);
+const Menu = ({setUser, menu ,setMenu}) => {
+ 
     const [course, setCourse] = useState();
     const [dish, setDish] = useState();
     const [price, setPrice] = useState();
