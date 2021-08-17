@@ -20,9 +20,10 @@ export const OrderTable = ({ menu, table, count, setCount, loaded2, setLoaded2 }
          setCount(holder)
       
         }
+        return local
       })
       setLoaded2(true)
-      },[loaded2])
+      },[loaded2, count, menu, setCount, setLoaded2, table])
     
   return (
     
