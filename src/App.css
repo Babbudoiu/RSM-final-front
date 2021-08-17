@@ -291,6 +291,54 @@ td {
   right: 38%;
 }
 
+.closeTabOrder{
+  color:#000;
+  background-color: orange;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  
+}
+.closeTabOrder:hover{
+  transition: all 0.2s ease-in-out;
+  background: #fff;
+  color: red;
+}
+
+.plusBtn{
+  color: #000;
+  background-color: orange;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  height:30px;
+  width:30px;
+}
+.plusBtn:hover{
+  background: #fff;
+  color: red;
+}
+.minusBtn{
+  color: #000;
+  background-color: orange;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  height:30px;
+  width:30px;
+}
+.minusBtn:hover{
+  background: #fff;
+  color: red;
+}
+
 
 
 .react-calendar {
