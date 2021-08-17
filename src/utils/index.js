@@ -41,6 +41,20 @@ export const fetchUsers = async (e, username, password, setUser) => {
   }
 };
 
+export const deleteUser = async (e, username )=>{
+  e.preventDefault();
+  try {
+    const response = await fetch(`${process.env.REACT_APP_BACK_END}users/${username}`, {
+      method: "Delete",
+      headers: { "Content-Type": "application/json" },})
+    
+      const data = await response.json()
+      console.log(data)
+  } catch (error) {console.log(error)
+    
+  }
+}
+
 export const createUsers = async (e, username, password, role, setUser) => {
   e.preventDefault();
   try {

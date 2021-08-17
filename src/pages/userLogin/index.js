@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { fetchUsers } from "../../utils";
+import { deleteUser, fetchUsers } from "../../utils";
 import { createUsers } from "../../utils";
 
 export const UserLogin = ({setUser, setAdmin}) => {
@@ -28,12 +28,19 @@ export const UserLogin = ({setUser, setAdmin}) => {
         <button
           className="logBtn"
           type="button"
+          onClick={() => setSetting(3)}
+        >
+          Delete User
+        </button>
+        <button
+          className="logBtn"
+          type="button"
           onClick={() => setAdmin()}
         >
           Admin Log Out
         </button>
         
-{setting ===1?
+        {setting ===1?
       <div className="form-container">
         <form className="logForm"
           onSubmit={(e) => fetchUsers(e, userUsername, userPassword,  setUser)}
@@ -51,6 +58,7 @@ export const UserLogin = ({setUser, setAdmin}) => {
           </div>: <></>}
           {setting ===2?
       <div className="form-container">
+
       <form className="logForm"
         onSubmit={(e) => createUsers(e, userUsername, userPassword,role, setUser)}
       >                     
@@ -66,9 +74,23 @@ export const UserLogin = ({setUser, setAdmin}) => {
           onChange={(e) => setUserPassword(e.target.value)}
           placeholder="User Password"></input>
         <button className="logBtn" type="submit">User Login</button>
+        </form>
+      </div> : <></>}
+
+        {setting ===3?
+      <div className="form-container">
+      <form className="logForm"
+        onSubmit={(e) => deleteUser(e, userUsername)}
+      >                     
+        <input className="logInput"
+          onChange={(e) => setUserUsername(e.target.value)}
+          placeholder="User Username"
+        /> 
         
-    </form>
-    </div> : <></>}
+        <button className="logBtn" type="submit">Delete User</button>
+        
+      </form>
+      </div> : <></>}
 
     </div>
   );
