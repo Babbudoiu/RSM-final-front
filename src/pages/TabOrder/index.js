@@ -17,7 +17,7 @@ const TabOrder =({table, setUser ,menu, setMenu}) => {
         <div>
             
             <Link to="/seating-plan">
-                <button type="button">Close tab</button>                
+                <button className = "closeTabOrder" type="button">Close tab</button>                
             </Link>
             <OrderTable menu={menu} table={table} count={count} setCount={setCount} loaded2={loaded2} setLoaded2={setLoaded2}/>
             <CheckoutTable count={count} menu={menu} table={table} setCount={setCount}  loaded2={loaded2} setLoaded2={setLoaded2}/>

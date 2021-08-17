@@ -49,6 +49,7 @@ export const OrderTable = ({ menu, table, count, setCount, loaded2, setLoaded2 }
                 
                 <td>
                   <button
+                  className = "plusBtn"
                     onClick={() => {
                       let holder = count
                         holder[index] = holder[index] +1
@@ -60,6 +61,7 @@ export const OrderTable = ({ menu, table, count, setCount, loaded2, setLoaded2 }
                 </td>
                 <td>
                   <button
+                  className = "minusBtn"
                     onClick={() => {
                    
                       let holder = count
