@@ -11,7 +11,7 @@ const TabOrder =({table, setUser ,menu, setMenu}) => {
     useEffect(() => {
         menuList(setMenu)
         setLoaded(true)
-    }, [loaded])
+    }, [loaded, setMenu])
 
     return (
         <div>

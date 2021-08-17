@@ -22,11 +22,11 @@ export const CheckoutTable = ({menu, count, setCount,loaded2 ,setLoaded2 ,table 
             holder[index]=0
            setCount(holder)
         }
-        
+        return local
       })
      
       setLoaded2(true)
-      },[loaded2])
+      },[loaded2, count, menu, setCount, setLoaded2, table])
      
 
         
@@ -60,7 +60,10 @@ return(
 <td>{ localStorage.getItem(`notes${table}${item.name}`)} </td>
     </tr>
 )
-}}) }
+} else {
+    return null
+}
+}) }
 <tr>
     <td>Total Price</td>
     <td>£{ totalPrice } </td>
