@@ -54,7 +54,7 @@ body {
   width: 300px;
   padding: 10px;
   margin: 5px;
-  background-color:antiquewhite;
+  background-color:white;
 }
 
 .logOutBtn {
@@ -179,6 +179,7 @@ body {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration:none;
+  font-weight: 700;
 }
 
 .navBtn:hover {
@@ -208,9 +209,26 @@ td {
 }
 
 .items-table {
-  float: right
+  box-sizing: border-box;
+  margin-top: 10px;
 }
 
+.menuBtn {
+  width: 150px;
+  background-color: darkgoldenrod;
+  margin: 5px;
+  cursor: pointer;
+  color: #000;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.menuBtn:hover {
+  background-color: #fff;
+  color: red;
+  transition: all 0.2s ease-in;
+}
 
 .mealBtn {
   width: 120px;

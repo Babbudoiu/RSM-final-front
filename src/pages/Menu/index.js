@@ -40,8 +40,8 @@ const Menu = ({setUser, menu ,setMenu}) => {
             type="text" 
             placeholder="Suitable for..." 
             onChange={(e) =>setDietary(e.target.value)}/>
-            <button type="submit">Add</button>
-            <button type="button"
+            <button className="menuBtn" type="submit">Add</button>
+            <button className="menuBtn" type="button"
             onClick={() => {
                 deleteCourse(course, dish)
                 setLoaded(false)
