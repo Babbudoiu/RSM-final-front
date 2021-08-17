@@ -22,7 +22,7 @@ export const CurrentBookingFormat = ({currentBookings})=>{
                         {LunchTimes.map((time,index)=>{
 
                             return(
-                                <tr>
+                                <tr key ={index}>
                                     <td className="td-border">{time}</td>
                                     <td className="td-border">{currentBookings[0][index].map((booking)=>{
                                         return(
