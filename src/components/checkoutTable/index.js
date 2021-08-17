@@ -39,21 +39,31 @@ return(
             <tr>
             <td>  Dish/Drinks </td>
             <td>  Price </td>
+            <td>  Extra Notes</td>
+            <td></td>
             </tr>
         </thead>
         <tbody>
 
 {menu.map((item,index)=>{
+    if(count[index]>0){
 return(
+    
     <tr>
 <td>{`${item.name} * ${count[index]}`} </td>
-<td>{item.price * count[index]} </td>
+<td>£{item.price * count[index]} </td>
+<td><input className="logInput"
+          onChange={(e) =>  localStorage.setItem(`notes${table}${item.name}`, e.target.value) }
+          placeholder={"extra notes"}
+        />  </td>
+<td> </td>
+<td>{ localStorage.getItem(`notes${table}${item.name}`)} </td>
     </tr>
 )
-}) }
+}}) }
 <tr>
     <td>Total Price</td>
-    <td>{ totalPrice } </td>
+    <td>£{ totalPrice } </td>
 </tr>
 </tbody>
 </table>

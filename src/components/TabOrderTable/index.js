@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React,{useEffect} from "react";
 
 export const OrderTable = ({ menu, table, count, setCount, loaded2, setLoaded2 }) => {
  
@@ -25,11 +25,9 @@ export const OrderTable = ({ menu, table, count, setCount, loaded2, setLoaded2 }
       },[loaded2])
     
   return (
-    <div>
-      {menu.map((item, index) => {
-                    
-        return (
-          <table className="items-table" key={index}>
+    
+      
+          <table className="items-table" >
             <thead>
               <tr>
                 
@@ -37,11 +35,14 @@ export const OrderTable = ({ menu, table, count, setCount, loaded2, setLoaded2 }
                
                 <td>Add</td>
                 <td>Remove</td>
-               <td>count</td>
+               
               </tr>
             </thead>
             <tbody>
-              <tr>
+              {menu.map((item, index) => {
+                    
+        return (
+              <tr key={index}>
                
                 <td>{item.name}</td>
                 
@@ -60,7 +61,7 @@ export const OrderTable = ({ menu, table, count, setCount, loaded2, setLoaded2 }
                   <button
                     onClick={() => {
                    
-let holder = count
+                      let holder = count
                       if (holder[index] !== 0) {
                         holder[index] = holder[index] -1
                         setCount(holder)
@@ -71,17 +72,17 @@ let holder = count
                         
                       }
                       localStorage.setItem(`table${table}${item.name}`, holder[index]);
-                      console.log(count)
+                      
                       setLoaded2(false)
                     }}
                   > - </button>
                 </td>
-                <td>{count[index]}</td>
-              </tr>
+                
+              </tr>)})}
             </tbody>
           </table>
-        );
-      })}
-    </div>
-  );
-};
+        
+      
+    
+  )
+}

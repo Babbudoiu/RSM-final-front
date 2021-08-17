@@ -3,10 +3,10 @@ import React from "react";
 const ItemsTable = ({menu}) => {
     return(
         <div>
-             {menu.map((item,index) => {
-                 return (
+             
+                 
                     
-                    <table className="items-table" key={index}>
+                    <table className="items-table" >
                     <thead>
                         <tr>
                         <td>Course</td>
@@ -15,17 +15,19 @@ const ItemsTable = ({menu}) => {
                         </tr>
                     </thead>
                     <tbody>
-                    <tr>
+                   {menu.map((item,index) => { 
+                    return (       
+                    <tr key={index}>
                         <td>{item.course}</td>
                         <td>{item.name}</td>
                         <td>£{item.price}</td>
-                    </tr>
+                    </tr> ) }) }
                     </tbody>
                     </table> 
                 
-                 )
-             }) 
-}
+                
+            
+
         </div>
     )
 };
