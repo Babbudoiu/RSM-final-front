@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { FormContainer, LandingContainer, LogButton, LogForm, LogInput } from "../../styledComponents";
 import { fetchAdmin } from "../../utils";
 import Footer from "../../components/Footer";
 

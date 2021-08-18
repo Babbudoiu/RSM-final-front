@@ -42,8 +42,8 @@ export const CheckoutTable = ({
           <tr>
             <td> Dish/Drinks </td>
             <td> Price </td>
-            <td> Extra Notes</td>
-            <td></td>
+            {/* <td> Extra Notes</td>
+            <td></td> */}
           </tr>
         </thead>
         <tbody>
@@ -53,7 +53,7 @@ export const CheckoutTable = ({
                 <tr>
                   <td>{`${item.name} * ${count[index]}`} </td>
                   <td>£{item.price * count[index]} </td>
-                  <td>
+                  {/* <td>
                     <input
                       className="logInput"
                       onChange={(e) =>
@@ -66,7 +66,7 @@ export const CheckoutTable = ({
                     />{" "}
                   </td>
                   <td> </td>
-                  <td>{localStorage.getItem(`notes${table}${item.name}`)} </td>
+                  <td>{localStorage.getItem(`notes${table}${item.name}`)} </td> */}
                 </tr>
               );
             } else {
