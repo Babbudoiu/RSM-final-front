@@ -24,7 +24,7 @@ export const Bookings = (date, time, index, index2) => {
         }
       >
         <div>
-          <label>{time}</label>
+          <label className='bookingFormLabel'>{time}</label>
         </div>
         <input
           type="text"
