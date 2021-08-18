@@ -12,7 +12,7 @@ const Reservations = ({ setUser, lunch, setLunch, dinner, setDinner }) => {
   const [currentBookings, setCurrentBookings] = useState([]);
   const [loaded, setLoaded] = useState(false);
 
-  console.log(dinner, lunch)
+  console.log(dinner, lunch);
   const onChange = (date) => {
     setDate(date);
   };
@@ -56,7 +56,6 @@ const Reservations = ({ setUser, lunch, setLunch, dinner, setDinner }) => {
       </div>
 
       <Footer />
-
     </div>
   );
 };

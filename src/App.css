@@ -1,19 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Baloo Thambi 2', cursive;
+  font-family: "Baloo Thambi 2", cursive;
 }
 
-h1, h2, p, td {
+h1,
+h2,
+p,
+td {
   color: #fff;
 }
 
 body {
   background-image: url("./logos/The\ Walrus\ Logo\ \(2\).png");
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
@@ -29,10 +32,10 @@ body {
 }
 
 .children-container {
-  flex:1;
+  flex: 1;
 }
 
-.logBtn{
+.logBtn {
   width: 300px;
   height: 5vh;
   margin: 5px;
@@ -58,27 +61,27 @@ body {
   width: 300px;
   padding: 10px;
   margin: 5px;
-  background-color:white;
+  background-color: white;
 }
 
 .logOutBtn {
   border-radius: 4px;
-  background: #01BF71;
+  background: #01bf71;
   white-space: nowrap;
   padding: 10px 22px;
   color: 010606;
   font-size: 16px;
   outline: none;
-  border:none;
+  border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .logOutBtn:hover {
   transition: all 0.2s ease-in-out;
   background: #fff;
-  color: #01BF71;
+  color: #01bf71;
 }
 
 .logOutBtn:active {
@@ -95,18 +98,17 @@ body {
 .bookings {
   display: flex;
   flex-direction: column;
-  background-color:antiquewhite;
+  background-color: antiquewhite;
 }
 
 .bookings label {
-  
   text-align: center;
   color: darkgoldenrod;
 }
 
-.bookingBut{
+.bookingBut {
   color: darkgoldenrod;
-  background-color:black;
+  background-color: black;
   border-color: darkgoldenrod;
 }
 
@@ -119,7 +121,7 @@ body {
   text-align: center;
   margin: 0 auto;
   color: darkgoldenrod;
-  background-color:black;
+  background-color: black;
   border-color: darkgoldenrod;
 }
 
@@ -131,7 +133,6 @@ body {
   width: 30%;
 } */
 
-
 .tables {
   display: flex;
   flex-wrap: wrap;
@@ -141,12 +142,9 @@ body {
   align-content: center;
 }
 
-
-
 .tablePics {
   height: 300px;
 }
-
 
 .navbar {
   text-align: center;
@@ -167,7 +165,7 @@ body {
 
 .navlink:hover {
   color: orange;
-  transition:  0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
   font-size: 28px;
 }
 
@@ -179,10 +177,10 @@ body {
   color: black;
   font-size: 16px;
   outline: none;
-  border:none;
+  border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  text-decoration:none;
+  text-decoration: none;
   font-weight: 700;
 }
 
@@ -196,16 +194,18 @@ body {
   transform: translateY(4px);
 }
 
-table, thead, .td-border{
-    border: 1px solid #A69658;
-    background: #000;
+table,
+thead,
+.td-border {
+  border: 1px solid #a69658;
+  background: #000;
 }
 
 table {
   margin: 0 auto;
 }
 
-thead{
+thead {
   font-weight: 2rem;
   font-size: 20px;
   word-spacing: 5px;
@@ -255,7 +255,7 @@ td {
   color: black;
 }
 
-.mealBtn:hover{
+.mealBtn:hover {
   background: #fff;
   color: rgb(255, 166, 0);
   transition: all 0.3s ease-in;
@@ -284,7 +284,7 @@ td {
 }
 
 .paidBtn {
-  color:#000;
+  color: #000;
   background-color: orange;
   text-align: center;
   text-decoration: none;
@@ -297,14 +297,14 @@ td {
   width: 100px;
 }
 
-.paidBtn:hover{
+.paidBtn:hover {
   transition: all 0.2s ease-in-out;
   background: #fff;
   color: red;
 }
 
-.closeTabOrder{
-  color:#000;
+.closeTabOrder {
+  color: #000;
   background-color: orange;
   text-align: center;
   text-decoration: none;
@@ -316,37 +316,36 @@ td {
   position: absolute;
   top: 10px;
   right: 10px;
-  
 }
-.closeTabOrder:hover{
+.closeTabOrder:hover {
   transition: all 0.2s ease-in-out;
   background: #fff;
   color: red;
 }
 
-.plusBtn{
+.plusBtn {
   color: #000;
   background-color: orange;
   cursor: pointer;
   font-weight: bold;
   text-align: center;
-  height:30px;
-  width:30px;
+  height: 30px;
+  width: 30px;
 }
-.plusBtn:hover{
+.plusBtn:hover {
   background: #fff;
   color: red;
 }
-.minusBtn{
+.minusBtn {
   color: #000;
   background-color: orange;
   cursor: pointer;
   font-weight: bold;
   text-align: center;
-  height:30px;
-  width:30px;
+  height: 30px;
+  width: 30px;
 }
-.minusBtn:hover{
+.minusBtn:hover {
   background: #fff;
   color: red;
 }
