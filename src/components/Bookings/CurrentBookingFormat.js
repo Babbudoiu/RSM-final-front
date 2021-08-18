@@ -3,7 +3,6 @@ import { DinnerTimes } from "./DinnerTimes";
 import { LunchTimes } from "./LunchTimes";
 
 export const CurrentBookingFormat = ({ currentBookings, lunch, dinner }) => {
-  console.log(lunch);
   if (lunch === true) {
     return (
       <div className="booking-container">

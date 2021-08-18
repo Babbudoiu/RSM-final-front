@@ -107,14 +107,12 @@ export const createBooking = async (
     e.preventDefault();
 
     const day = `${date.getMonth()}-${date.getDate()}-${date.getFullYear()}`;
-    console.log(day);
+
     const response = await fetch(
       `${process.env.REACT_APP_BACK_END}bookings/${day}`
     );
-    console.log(response);
-    const data = await response.json();
 
-    console.log(data.targetBookings);
+    const data = await response.json();
 
     const booking = [[firstName], [surname], [groupSize], [phoneNumber]];
     if (data.targetBookings === null) {
@@ -165,8 +163,7 @@ export const createBooking = async (
         }
       );
       const data2 = await response2.json();
-      console.log(data2);
-      console.log(dayArray);
+      console.log(data2)
     } else if (data.targetBookings) {
       const entry = data.targetBookings.dayArray[index2][index];
       if (entry[0] === null) {
@@ -188,7 +185,6 @@ export const createBooking = async (
       );
       const data2 = await response2.json();
       console.log(data2);
-      console.log(data.targetBookings.dayArray);
     }
   } catch (error) {
     console.log(error);
@@ -285,6 +281,7 @@ export const createMenuEntries = async (
     nuts = true;
   }
 
+
   try {
     const response = await fetch(`${process.env.REACT_APP_BACK_END}menu`, {
       method: "POST",
@@ -320,9 +317,8 @@ export const menuList = async (setMenu) => {
   }
 };
 
-export const deleteCourse = async (course, name) => {
-  console.log(course);
-  console.log(name);
+export const deleteCourse = async (course, name , e ) => {
+  e.preventDefault();
   try {
     let response;
 
@@ -338,3 +334,4 @@ export const deleteCourse = async (course, name) => {
     console.log(error);
   }
 };
+

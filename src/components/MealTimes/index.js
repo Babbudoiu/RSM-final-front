@@ -16,7 +16,6 @@ export const MealTimes = ({
     } else if (lunch === false) {
       setLunch(true);
     }
-    console.log(lunch);
   };
 
   const dinnerHandler = () => {
