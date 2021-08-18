@@ -33,7 +33,7 @@ export const fetchUsers = async (e, username, password, setUser) => {
     );
     const data = await response.json();
 
-    localStorage.setItem('MyToken',data.token)
+    localStorage.setItem("MyToken", data.token);
 
     setUser(data.user.name);
   } catch (error) {
@@ -41,19 +41,23 @@ export const fetchUsers = async (e, username, password, setUser) => {
   }
 };
 
-export const deleteUser = async (e, username )=>{
+export const deleteUser = async (e, username) => {
   e.preventDefault();
   try {
-    const response = await fetch(`${process.env.REACT_APP_BACK_END}users/${username}`, {
-      method: "Delete",
-      headers: { "Content-Type": "application/json" },})
-    
-      const data = await response.json()
-      console.log(data)
-  } catch (error) {console.log(error)
-    
+    const response = await fetch(
+      `${process.env.REACT_APP_BACK_END}users/${username}`,
+      {
+        method: "Delete",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
   }
-}
+};
 
 export const createUsers = async (e, username, password, role, setUser) => {
   e.preventDefault();
@@ -89,7 +93,6 @@ export const authUser = async (setUser) => {
   }
 };
 
-
 export const createBooking = async (
   e,
   firstName,
@@ -100,19 +103,16 @@ export const createBooking = async (
   index,
   index2
 ) => {
-
   try {
     e.preventDefault();
-    
+
     const day = `${date.getMonth()}-${date.getDate()}-${date.getFullYear()}`;
-    console.log(day);
+
     const response = await fetch(
       `${process.env.REACT_APP_BACK_END}bookings/${day}`
     );
-    console.log(response);
-    const data = await response.json();
 
-    console.log(data.targetBookings);
+    const data = await response.json();
 
     const booking = [[firstName], [surname], [groupSize], [phoneNumber]];
     if (data.targetBookings === null) {
@@ -163,8 +163,7 @@ export const createBooking = async (
         }
       );
       const data2 = await response2.json();
-      console.log(data2);
-      console.log(dayArray);
+      console.log(data2)
     } else if (data.targetBookings) {
       const entry = data.targetBookings.dayArray[index2][index];
       if (entry[0] === null) {
@@ -186,9 +185,7 @@ export const createBooking = async (
       );
       const data2 = await response2.json();
       console.log(data2);
-      console.log(data.targetBookings.dayArray);
     }
-
   } catch (error) {
     console.log(error);
   }
@@ -206,136 +203,133 @@ export const getBookings = async (
     );
     const data = await response.json();
 
-        if(data.targetBookings !== null) {
-          await setCurrentBookings(data.targetBookings.dayArray);
-        } else {
-          let dayArray = [
-            [
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-            ],
-            [
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-              [null],
-            ],
-          ];
-          setCurrentBookings(dayArray)
-        }
-    
-
+    if (data.targetBookings !== null) {
+      await setCurrentBookings(data.targetBookings.dayArray);
+    } else {
+      let dayArray = [
+        [
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+        ],
+        [
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+          [null],
+        ],
+      ];
+      setCurrentBookings(dayArray);
+    }
   } catch (error) {
     console.log(error);
   }
 };
 
-
-export const createMenuEntries = async (e, course, dish, price, dietary, setMenu , menu) => {
+export const createMenuEntries = async (
+  e,
+  course,
+  dish,
+  price,
+  dietary,
+  setMenu,
+  menu
+) => {
   e.preventDefault();
 
-    let glutenFree = false;
-    if(dietary === "gluten free"){
+  let glutenFree = false;
+  if (dietary === "gluten free") {
     glutenFree = true;
-    }
+  }
 
-    
-    let vegan = false;
-    if(dietary === "vegan"){
+  let vegan = false;
+  if (dietary === "vegan") {
     vegan = true;
-    }
+  }
 
-    
-    let vegetarian = false;
-    if(dietary === "vegetarian"){
+  let vegetarian = false;
+  if (dietary === "vegetarian") {
     vegetarian = true;
-    }
+  }
 
-    
-    let dairyFree = false;
-    if(dietary === "dairy free"){
+  let dairyFree = false;
+  if (dietary === "dairy free") {
     dairyFree = true;
-    }
+  }
 
-    
-    let nuts = false;
-    if(dietary === "nuts"){
+  let nuts = false;
+  if (dietary === "nuts") {
     nuts = true;
-    }
+  }
 
-    try {
-      const response = await fetch(`${process.env.REACT_APP_BACK_END}menu`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            course: course,
-            name: dish,
-            price: price,
-            dietary: [vegan, vegetarian, dairyFree , glutenFree, nuts ]
-        })
-    })
-      const data = await response.json();
-      if(menu.length > 0) {
-        setMenu([...menu, data.menu])
-      } else {
-      setMenu([data.menu])
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-   export const menuList = async (setMenu) => {
-    let response;
-    try {
-       response = await fetch(`${process.env.REACT_APP_BACK_END}menu`, {
-         method:"GET"
-       })
-    const data = await response.json();
-    setMenu(data);
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-export const deleteCourse = async (course, name) => {
-  console.log(course)
-  console.log(name)
   try {
-      let response;
-      
-      if (course) {
-          response = await fetch(`${process.env.REACT_APP_BACK_END}menu/${name}`, {
-              method:'DELETE',
-              headers:{'content-Type' : 'application/json'}
-          })
-      }
-     const data = await response.json();
-  console.log(data)
+    const response = await fetch(`${process.env.REACT_APP_BACK_END}menu`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        course: course,
+        name: dish,
+        price: price,
+        dietary: [vegan, vegetarian, dairyFree, glutenFree, nuts],
+      }),
+    });
+    const data = await response.json();
+    if (menu.length > 0) {
+      setMenu([...menu, data.menu]);
+    } else {
+      setMenu([data.menu]);
+    }
   } catch (error) {
-      console.log(error);
+    console.log(error);
   }
 };
 
-  
+export const menuList = async (setMenu) => {
+  let response;
+  try {
+    response = await fetch(`${process.env.REACT_APP_BACK_END}menu`, {
+      method: "GET",
+    });
+    const data = await response.json();
+    setMenu(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
+export const deleteCourse = async (course, name , e ) => {
+  e.preventDefault();
+  try {
+    let response;
+
+    if (course) {
+      response = await fetch(`${process.env.REACT_APP_BACK_END}menu/${name}`, {
+        method: "DELETE",
+        headers: { "content-Type": "application/json" },
+      });
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
