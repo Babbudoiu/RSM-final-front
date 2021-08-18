@@ -3,10 +3,7 @@ import React from "react";
 const ItemsTable = ({menu}) => {
     return(
         <div>
-             
-                 
-                    
-                    <table className="items-table" >
+             <table className="items-table" >
                     <thead>
                         <tr>
                         <td>Course</td>
@@ -24,11 +21,7 @@ const ItemsTable = ({menu}) => {
                     </tr> ) }) }
                     </tbody>
                     </table> 
-                
-                
-            
-
-        </div>
+    </div>
     )
 };
 
