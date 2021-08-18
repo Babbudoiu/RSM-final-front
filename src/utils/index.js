@@ -281,6 +281,7 @@ export const createMenuEntries = async (
     nuts = true;
   }
 
+
   try {
     const response = await fetch(`${process.env.REACT_APP_BACK_END}menu`, {
       method: "POST",
@@ -333,3 +334,4 @@ export const deleteCourse = async (course, name , e ) => {
     console.log(error);
   }
 };
+

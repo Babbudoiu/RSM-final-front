@@ -1,6 +1,4 @@
 import React from "react";
-
-
 const ItemsTable = ({ menu }) => {
   return (
     <div>
@@ -26,7 +24,6 @@ const ItemsTable = ({ menu }) => {
       </table>
     </div>
   );
-
 };
 
 export default ItemsTable;
