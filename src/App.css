@@ -156,14 +156,32 @@ body {
   cursor: pointer;
 }
 
+
 .navbar {
   text-align: center;
   width: 100%;
   padding-bottom: 10px;
   height: 7vh;
   margin-top: 10px;
-  position: sticky;
+  position: sticky; 
 }
+
+.mobileIcon {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .mobileIcon {
+     display: block;
+     position: absolute;
+     top: 0;
+     right: 0;
+     transform: translate(-100%, 60%);
+     font-size: 1.8rem;
+     cursor: pointer;
+     color: red ;
+  }
+}
+
 .navlink {
   color: white;
   text-decoration: none;
@@ -171,6 +189,11 @@ body {
   justify-content: space-between;
   margin: 40px;
   padding: 2px;
+}
+@media screen and (max-width: 768px) {
+  .navlink{
+    display:none;
+  }
 }
 
 .navlink:hover {
@@ -192,6 +215,11 @@ body {
   transition: all 0.2s ease-in-out;
   text-decoration:none;
   font-weight: 700;
+}
+@media screen and (max-width: 768px) {
+  .navBtn{
+    display:none;
+  }
 }
 
 .navBtn:hover {

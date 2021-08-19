@@ -5,12 +5,19 @@ import Calendar from "react-calendar";
 import Footer from "../../components/Footer";
 import { getBookings } from "../../utils";
 import { CurrentBookingFormat } from "../../components/Bookings/CurrentBookingFormat";
+import Sidebar from "../../components/Sidebar";
 
 const Reservations = ({ setUser, lunch, setLunch, dinner, setDinner }) => {
   const [date, setDate] = useState(new Date());
   const [showMeals, setShowMeals] = useState(false);
   const [currentBookings, setCurrentBookings] = useState([]);
   const [loaded, setLoaded] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+    
+  
+  const toggle = () => {
+        setIsOpen(!isOpen)
+  }
 
   const onChange = (date) => {
     setDate(date);
@@ -24,7 +31,8 @@ const Reservations = ({ setUser, lunch, setLunch, dinner, setDinner }) => {
   return (
     <div className="container">
       <div className="children-container">
-        <Navbar setUser={setUser} />
+        <Sidebar isOpen={isOpen} toggle={toggle} />
+        <Navbar setUser={setUser} toggle={toggle}/>
 
         <Calendar
           onChange={onChange}

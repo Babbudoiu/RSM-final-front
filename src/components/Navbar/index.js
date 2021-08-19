@@ -1,7 +1,12 @@
 import React from 'react';
+import { FaBars } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom';
+import { MobileIcon } from './NavbarElements';
 
-export const Navbar = ({setUser}) => {
+
+export const Navbar = ({setUser, toggle}) => {
+
+    console.log(toggle);
 
     const logoutHandler = (e) => {
         e.preventDefault();
@@ -9,8 +14,12 @@ export const Navbar = ({setUser}) => {
         setUser();
 
     }
+    
     return (
         <div className="navbar">
+        <MobileIcon onClick = {toggle}>
+            <FaBars />
+        </MobileIcon>
         <NavLink 
         to="/home" 
         className="navlink">Walrus</NavLink>
