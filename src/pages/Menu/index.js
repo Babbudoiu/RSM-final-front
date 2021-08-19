@@ -60,8 +60,8 @@ const Menu = ({ setUser, menu, setMenu }) => {
           <button
             className="menuBtn"
             type="button"
-            onClick={() => {
-              deleteCourse(course, dish);
+            onClick={(e) => {
+              deleteCourse(course, dish, e);
               setLoaded(false);
             }}
           >
