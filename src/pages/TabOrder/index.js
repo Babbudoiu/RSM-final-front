@@ -4,7 +4,7 @@ import { CheckoutTable } from "../../components/checkoutTable";
 import { OrderTable } from "../../components/TabOrderTable";
 import { menuList } from "../../utils";
 
-const TabOrder = ({ table, setUser, menu, setMenu }) => {
+const TabOrder = ({ table, menu, setMenu }) => {
   const [count, setCount] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [loaded2, setLoaded2] = useState(false);
