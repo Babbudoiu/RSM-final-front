@@ -474,3 +474,15 @@ td {
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
 }
+
+@media screen and (max-width: 768px) {
+  .navBtn{
+    display:none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navlink{
+    display:none;
+  }
+}
