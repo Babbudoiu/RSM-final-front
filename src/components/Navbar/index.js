@@ -3,7 +3,7 @@ import { FaBars } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const Navbar = ({setUser, toggle}) => {
-    console.log(toggle);
+    
     const logoutHandler = (e) => {
         e.preventDefault();
         localStorage.removeItem("MyToken");
@@ -32,8 +32,7 @@ export const Navbar = ({setUser, toggle}) => {
 }
 export default Navbar;
 
-
-export const MobileIcon = styled.div`
+const MobileIcon = styled.div`
  display: none;
  @media screen and (max-width: 768px) {
      display: block;
